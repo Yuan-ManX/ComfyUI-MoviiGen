@@ -325,3 +325,21 @@ def generate(args):
     logging.info("Finished.")
 
 
+class LoadMoviiGenModel:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "model_path": ("STRING", {"default": "./MoviiGen1.1"}),
+            }
+        }
+
+    RETURN_TYPES = ("MODEL",)
+    RETURN_NAMES = ("model",)
+    FUNCTION = "load_model"
+    CATEGORY = "MoviiGen-1.1"
+
+    def load_model(self, model_path):
+        model = model_path
+        return (model,)
+
