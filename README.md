@@ -38,3 +38,21 @@ pip install "huggingface_hub[cli]"
 huggingface-cli download ZuluVision/MoviiGen1.1 --local-dir ./MoviiGen1.1
 ```
 
+
+## Prompt Tips:
+
+- **Prompt Length**: The prompt length should be around 100~200.
+  
+- **Prompt Content**: The prompt should contain **scene description**, **main subject**, **events**, **aesthetics description** and **camera movement**.
+
+- **Example**: 
+```
+Scene Description: A smoky, atmospheric private eye office bathed in dramatic film noir lighting, sharp shadows from slatted blinds cut across a cluttered desk and worn surroundings, evoking the classic style by 1940s film.
+Main Subject: A world-weary detective is sitting behind the desk.
+Events: He is smoking a cigarette, slowly bringing it to his lips, inhaling, and exhaling a plume of smoke that drifts in the harsh, directional light.
+Aesthetics Description: The scene is rendered in stark black and white, creating a high-contrast, cinematic mood.
+Camera Movement: The camera holds a static medium shot focused on the detective, emphasizing the gritty texture and oppressive atmosphere.
+
+Final Prompt:
+A smoky, atmospheric private eye office bathed in dramatic film noir lighting, sharp shadows from slatted blinds cut across a cluttered desk and worn surroundings, evoking the classic style by 1940s film. A world-weary detective is sitting behind the desk. He is smoking a cigarette, slowly bringing it to his lips, inhaling, and exhaling a plume of smoke that drifts in the harsh, directional light. The scene is rendered in stark black and white, creating a high-contrast, cinematic mood. The camera holds a static medium shot focused on the detective, emphasizing the gritty texture and oppressive atmosphere.
+```
