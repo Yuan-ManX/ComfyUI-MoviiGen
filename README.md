@@ -25,3 +25,16 @@ pip install -r requirements.txt
 
 
 ## Model
+
+
+### Model Download
+
+T2V-14B  Model: 🤗 [Huggingface](https://huggingface.co/ZuluVision/MoviiGen1.1) 
+MoviiGen1.1 model supports both 720P and 1080P. For more cinematic quality, we recommend using 1080P and a 21:9 aspect ratio (1920*832).
+
+Download models using huggingface-cli:
+```
+pip install "huggingface_hub[cli]"
+huggingface-cli download ZuluVision/MoviiGen1.1 --local-dir ./MoviiGen1.1
+```
+
