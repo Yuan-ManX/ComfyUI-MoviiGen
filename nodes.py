@@ -87,9 +87,14 @@ class MoviiGen:
     FUNCTION = "generate"
     CATEGORY = "MoviiGen-1.1"
 
-    def generate(self, task, size, frame_num, ckpt_dir, offload_model, ulysses_size, ring_size, t5_fsdp, t5_cpu,
-                dit_fsdp, prompt, base_seed, sample_solver, sample_steps, sample_shift, sample_guide_scale):
-      
+    def generate(self, task, size, frame_num, ckpt_dir, ulysses_size, ring_size, prompt, 
+                base_seed, sample_solver, sample_steps, sample_shift, sample_guide_scale):
+
+        offload_model = None
+        t5_fsdp = False
+        t5_cpu = False
+        dit_fsdp = False
+                  
         rank = int(os.getenv("RANK", 0))
         world_size = int(os.getenv("WORLD_SIZE", 1))
         local_rank = int(os.getenv("LOCAL_RANK", 0))
