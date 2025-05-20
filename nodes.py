@@ -130,7 +130,7 @@ class MoviiGen:
     
         if use_prompt_extend:
             prompt_expander = QwenPromptExpander(
-                model_name=args.prompt_extend_model,
+                model_name=prompt_extend_model,
                 is_vl=False,
                 device=rank)
     
@@ -139,11 +139,11 @@ class MoviiGen:
             assert cfg.num_heads % ulysses_size == 0, f"`{cfg.num_heads=}` cannot be divided evenly by `{ulysses_size=}`."
    
         if dist.is_initialized():
-            base_seed = [args.base_seed] if rank == 0 else [None]
+            base_seed = [base_seed] if rank == 0 else [None]
             dist.broadcast_object_list(base_seed, src=0)
             base_seed = base_seed[0]
     
-        if "t2v" in args.task or "t2i" in task:
+        if "t2v" in task or "t2i" in task:
             if prompt is None:
                 prompt = EXAMPLE_PROMPT[task]["prompt"]
             
