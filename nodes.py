@@ -40,7 +40,7 @@ class LoadMoviiGenModel:
         return (model,)
 
 
-class Prompt:
+class MoviiGenPrompt:
     @classmethod
     def INPUT_TYPES(s):
         return {
